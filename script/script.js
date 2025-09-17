@@ -18,19 +18,16 @@ getElementById('service-box').addEventListener('click',function(e){
 
     const serviceTitle = serviceButton.parentNode.parentNode.children[1].children[0].innerText;
     const serviceCall = serviceButton.parentNode.parentNode.children[2].children[0].innerText;
-    const serviceDate = 
-    console.log(serviceCall);
-
-    const serviceContainer = getElementById('service-container');
+    const serviceDate = "";
+    // console.log(serviceCall);
 
     const newHistoryContainer = getElementById('service-container');
-
     const newHistory = document.createElement('div');
     newHistory.innerHTML = `
-                    <div class="bg-white shadow-md rounded-xl p-4 flex gap-6">
+                    <div class="bg-white shadow-lg rounded-xl p-2 flex gap-6">
                         <div>
-                            <h1 class="font-semibold text-[18px]">${serviceTitle}</h1>
-                            <h1 class="font-semibold text-gray-500 text-[18px]">${serviceCall}</h1>
+                            <h1 class="font-semibold text-[16px]">${serviceTitle}</h1>
+                            <h1 class="font-semibold text-gray-500 text-[18px] mt-1">${serviceCall}</h1>
                         </div>
                         <p class="font-[400px]">11:36:58 AM</p>
                     </div>
