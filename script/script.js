@@ -1,0 +1,47 @@
+console.log(document);
+
+function getElementById(id){
+    const element = document.getElementById(id);
+    return element;
+}
+//event add korar system
+
+//যেখানে ক্লিক হবে সেটাকে ধরে নিয়ে আসতে হবে।
+//ইভেন্ট অ্যাড করতে হবে।
+//ফাংশন লেখতে হবে।
+
+//Event delegation
+getElementById('service-box').addEventListener('click',function(e){
+   if(e.target.className.includes('btn-call')){
+    // alert('card-clicked')
+    const serviceButton = e.target;
+
+    const serviceTitle = serviceButton.parentNode.parentNode.children[1].children[0].innerText;
+    const serviceCall = serviceButton.parentNode.parentNode.children[2].children[0].innerText;
+    const serviceDate = 
+    console.log(serviceCall);
+
+    const serviceContainer = getElementById('service-container');
+
+    const newHistoryContainer = getElementById('service-container');
+
+    const newHistory = document.createElement('div');
+    newHistory.innerHTML = `
+                    <div class="bg-white shadow-md rounded-xl p-4 flex gap-6">
+                        <div>
+                            <h1 class="font-semibold text-[18px]">${serviceTitle}</h1>
+                            <h1 class="font-semibold text-gray-500 text-[18px]">${serviceCall}</h1>
+                        </div>
+                        <p class="font-[400px]">11:36:58 AM</p>
+                    </div>
+    `;
+    newHistoryContainer.append(newHistory);
+   }
+})
+
+document.getElementById('btn-clear').addEventListener('click', function(){
+  const cardContainer = getElementById('service-container');
+  cardContainer.innerHTML ='';
+
+});
+
