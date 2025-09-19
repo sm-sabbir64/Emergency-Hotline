@@ -24,19 +24,19 @@
     <nav class="flex justify-between items-centerp p-3 bg-[#FFFFFF]">
         <div class="flex justify-center items-center ">
             <img class="w-[50] h-[60px]" src="./assets/logo.png" alt="">
-            <h1 class="font-bold text-[18px] text-[#006747] ml-2">Emergency <br>Service</h1>
+            <h1 class="font-bold md:text-[18px] text-[#006747] ml-2">Emergency <br>Service</h1>
         </div>
         <div class="flex justify-between items-center gap-4">
             <div class="w-[80px] flex justify-center items-center bg-[#41ff6b1a] rounded-3xl">
-                <p class="font-bold text-[18px] p-1 mr-2">0</p>
+                <p id="heart-count" class="font-bold text-[18px] p-1 mr-2">0</p>
                 <img class="w-[30px] p-1" src="./assets/heart.png" alt="">
             </div>
             <div class="w-[80px] flex justify-center items-center bg-[#41ff6b1a] rounded-3xl">
-                <p class="font-bold text-[18px] p-1 mr-2">100</p>
+                <p id="coin-count" class="font-bold text-[18px] p-1 mr-2">100</p>
                 <img class="w-[30px] p-1" src="./assets/coin.png" alt="">
             </div>
-            <button class="text-[16px] w-[100px] rounded-3xl text-white bg-[#00A63E] p-2 "><span
-                    class="text-[16px]">2</span>
+            <button id="copyCount" class="text-[16px] w-[100px] rounded-3xl text-white bg-[#00A63E] p-2 "><span
+                    class="text-[16px]">0</span>
                 Copy</button>
         </div>
     </nav>
@@ -51,13 +51,13 @@
         </section>
         <!-- HelpLine Service Card start here -->
         <section class="service-container w-full mx-auto grid grid-cols-12 gap-6 p-10">
-            <div id="service-box" class="col-span-9 grid grid-cols-3 gap-4 mt-6">
-                <div class="bg-white shadow-2xl p-6 rounded-lg">
+            <div id="service-box" class="col-span-9 grid grid-cols-3 gap-4 mt-6 h-fit">
+                <div class="bg-white shadow-2xl p-6 rounded-lg h-fit">
                     <div class="flex justify-between items-center">
                         <div class="w-[55px] p-2 bg-[#FFE3E2] rounded-2xl mt-5">
                             <img class="m-auto mt-2 w-[32px]" src="./assets/emergency.png" alt="">
                         </div>
-                        <i class='bx bx-heart text-[30px] mt-5'></i>
+                        <i class='heartClass bx bx-heart text-[30px] mt-5'></i>
                     </div>
                     <div class="mt-[16px]">
                         <h1 class="text-[19px] font-bold">National Emergency Number</h1>
@@ -70,19 +70,19 @@
                     </div>
                     <div class="flex justify-between items-center gap-5 mt-[24px]">
                         <button
-                            class=" text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
+                            class="copy-btn text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
                                 class="fa-regular fa-copy text-[16px]"></i>Copy</button>
                         <button
                             class="btn-call bg-[#00A63E] text-[15px] w-[200px] p-2 text-white shadow-lg cursor-pointer rounded-lg"><i
                                 class="fa-solid fa-phone text-[15px]"></i> Call</button>
                     </div>
                 </div>
-                <div class="bg-white shadow-2xl p-6 rounded-lg">
+                <div class="bg-white shadow-2xl p-6 rounded-lg h-fit">
                     <div class="flex justify-between items-center">
                         <div class="w-[55px] p-2 bg-[#FFE3E2] rounded-2xl mt-5">
                             <img class="m-auto mt-2 w-[32px]" src="./assets/police.png" alt="">
                         </div>
-                        <i class='bx bx-heart text-[30px] mt-5'></i>
+                        <i class='heartClass bx bx-heart text-[30px] mt-5'></i>
                     </div>
                     <div class="mt-[16px]">
                         <h1 class="text-[19px] font-bold">Police Helpline Number</h1>
@@ -94,19 +94,20 @@
                             Police</p>
                     </div>
                     <div class="flex justify-between items-center gap-5 mt-[24px]">
-                        <button class=" text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
+                        <button
+                            class="copy-btn text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
                                 class="fa-regular fa-copy text-[16px] "></i>Copy</button>
                         <button
                             class="btn-call bg-[#00A63E] text-[15px] w-[200px] p-2 text-white shadow-lg rounded-lg cursor-pointer"><i
                                 class="fa-solid fa-phone text-[15px] "></i> Call</button>
                     </div>
                 </div>
-                <div class="bg-white shadow-2xl p-6 rounded-lg">
+                <div class="bg-white shadow-2xl p-6 rounded-lg h-fit">
                     <div class="flex justify-between items-center">
                         <div class="w-[55px] p-2 bg-[#FFE3E2] rounded-2xl mt-5">
                             <img class="m-auto mt-2 w-[32px]" src="./assets/fire-service.png" alt="">
                         </div>
-                        <i class='bx bx-heart text-[30px] mt-5'></i>
+                        <i class='heartClass bx bx-heart text-[30px] mt-5'></i>
                     </div>
                     <div class="mt-[16px]">
                         <h1 class="text-[19px] font-bold">Fire Service Number</h1>
@@ -118,19 +119,20 @@
                             Fire</p>
                     </div>
                     <div class="flex justify-between items-center gap-5 mt-[24px]">
-                        <button class="text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
+                        <button
+                            class="copy-btn text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
                                 class="fa-regular fa-copy text-[16px]"></i>Copy</button>
                         <button
                             class="btn-call bg-[#00A63E] text-[15px] w-[200px] p-2 text-white shadow-lg rounded-lg cursor-pointer"><i
                                 class="fa-solid fa-phone text-[15px] "></i> Call</button>
                     </div>
                 </div>
-                <div class="bg-white shadow-2xl p-6 rounded-lg">
+                <div class="bg-white shadow-2xl p-6 rounded-lg h-fit">
                     <div class="flex justify-between items-center">
                         <div class="w-[55px] p-2 bg-[#FFE3E2] rounded-2xl mt-5">
                             <img class="m-auto mt-2 w-[32px]" src="./assets/ambulance.png" alt="">
                         </div>
-                        <i class='bx bx-heart text-[30px] mt-5'></i>
+                        <i class='heartClass bx bx-heart text-[30px] mt-5'></i>
                     </div>
                     <div class="mt-[16px]">
                         <h1 class="text-[19px] font-bold">Ambulance Service</h1>
@@ -142,19 +144,20 @@
                             Health</p>
                     </div>
                     <div class="flex justify-between items-center gap-5 mt-[24px]">
-                        <button class="text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
+                        <button
+                            class="copy-btn text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
                                 class="fa-regular fa-copy text-[16px]"></i>Copy</button>
                         <button
                             class="btn-call bg-[#00A63E] text-[15px] w-[200px] p-2 text-white shadow-lg rounded-lg cursor-pointer"><i
                                 class="fa-solid fa-phone text-[15px] "></i> Call</button>
                     </div>
                 </div>
-                <div class="bg-white shadow-2xl p-6 rounded-lg">
+                <div class="bg-white shadow-2xl p-6 rounded-lg h-fit">
                     <div class="  flex justify-between items-center">
                         <div class="w-[55px] p-2 bg-[#FFE3E2] rounded-2xl mt-5">
                             <img class="m-auto mt-2 w-[32px]" src="./assets/emergency.png" alt="">
                         </div>
-                        <i class='bx bx-heart text-[30px] mt-5'></i>
+                        <i class='heartClass bx bx-heart text-[30px] mt-5'></i>
                     </div>
                     <div class="mt-[16px]">
                         <h1 class="text-[19px] font-bold">Women & Child Helpline</h1>
@@ -166,19 +169,20 @@
                             Help</p>
                     </div>
                     <div class="flex justify-between items-center gap-5 mt-[24px]">
-                        <button class="text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
+                        <button
+                            class="copy-btn text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
                                 class="fa-regular fa-copy text-[16px]"></i>Copy</button>
                         <button
                             class="btn-call bg-[#00A63E] text-[15px] w-[200px] p-2 text-white shadow-lg rounded-lg cursor-pointer"><i
                                 class="fa-solid fa-phone text-[15px] "></i> Call</button>
                     </div>
                 </div>
-                <div class="bg-white shadow-2xl p-6 rounded-lg">
-                    <div class="  flex justify-between items-center">
+                <div class="bg-white shadow-2xl p-6 rounded-lg h-fit">
+                    <div class="flex justify-between items-center">
                         <div class="w-[55px] p-2 bg-[#FFE3E2] rounded-2xl mt-5">
                             <img class="m-auto mt-2 w-[32px]" src="./assets/emergency.png" alt="">
                         </div>
-                        <i class='bx bx-heart text-[30px] mt-5'></i>
+                        <i class='heartClass bx bx-heart text-[30px] mt-5'></i>
                     </div>
                     <div class="mt-[16px]">
                         <h1 class="text-[19px] font-bold">Anti-Corruption Helpline</h1>
@@ -190,19 +194,20 @@
                             Govt.</p>
                     </div>
                     <div class="flex justify-between items-center gap-5 mt-[24px]">
-                        <button class="text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
+                        <button
+                            class="copy-btn text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
                                 class="fa-regular fa-copy text-[16px]"></i>Copy</button>
                         <button
                             class="btn-call bg-[#00A63E] text-[15px] w-[200px] p-2 text-white shadow-lg rounded-lg cursor-pointer"><i
                                 class="fa-solid fa-phone text-[15px] "></i> Call</button>
                     </div>
                 </div>
-                <div class="bg-white shadow-2xl p-6 rounded-lg">
+                <div class="bg-white shadow-2xl p-6 rounded-lg h-fit">
                     <div class="  flex justify-between items-center">
                         <div class="w-[55px] p-2 bg-[#FFE3E2] rounded-2xl mt-5">
                             <img class="m-auto mt-2 w-[32px]" src="./assets/emergency.png" alt="">
                         </div>
-                        <i class='bx bx-heart text-[30px] mt-5'></i>
+                        <i class='heartClass bx bx-heart text-[30px] mt-5'></i>
                     </div>
                     <div class="mt-[16px]">
                         <h1 class="text-[19px] font-bold">Electricity Helpline</h1>
@@ -214,19 +219,20 @@
                             Electricity</p>
                     </div>
                     <div class="flex justify-between items-center gap-5 mt-[24px]">
-                        <button class="text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
+                        <button
+                            class="copy-btn text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
                                 class="fa-regular fa-copy text-[16px]"></i>Copy</button>
                         <button
                             class="btn-call bg-[#00A63E] text-[15px] w-[200px] p-2 text-white shadow-lg rounded-lg cursor-pointer"><i
                                 class="fa-solid fa-phone text-[15px] "></i> Call</button>
                     </div>
                 </div>
-                <div class="bg-white shadow-2xl  p-6 rounded-lg">
+                <div class="bg-white shadow-2xl  p-6 rounded-lg h-fit">
                     <div class="  flex justify-between items-center">
                         <div class="w-[55px] p-2 bg-[#FFE3E2] rounded-2xl mt-5">
                             <img class="m-auto mt-2 w-[32px]" src="./assets/emergency.png" alt="">
                         </div>
-                        <i class='bx bx-heart text-[30px] mt-5'></i>
+                        <i class='heartClass bx bx-heart text-[30px] mt-5'></i>
                     </div>
                     <div class="mt-[16px]">
                         <h1 class="text-[19px] font-bold">Brac Helpline</h1>
@@ -238,19 +244,20 @@
                         </p>
                     </div>
                     <div class="flex justify-between items-center gap-5 mt-[24px]">
-                        <button class="text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
+                        <button
+                            class="copy-btn text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
                                 class="fa-regular fa-copy text-[16px]"></i>Copy</button>
                         <button
                             class="btn-call bg-[#00A63E] text-[15px] w-[200px] p-2 text-white shadow-lg rounded-lg cursor-pointer"><i
                                 class="fa-solid fa-phone text-[15px] "></i> Call</button>
                     </div>
                 </div>
-                <div class="bg-white shadow-2xl  p-6 rounded-lg">
+                <div class="bg-white shadow-2xl  p-6 rounded-lg h-fit">
                     <div class=" flex justify-between items-center">
                         <div class="w-[55px] p-2 bg-[#FFE3E2] rounded-2xl mt-5">
                             <img class="m-auto mt-2 w-[32px]" src="./assets/emergency.png" alt="">
                         </div>
-                        <i class='bx bx-heart text-[30px] mt-5'></i>
+                        <i class='heartClass bx bx-heart text-[30px] mt-5'></i>
                     </div>
                     <div class="mt-[16px]">
                         <h1 class="text-[19px] font-bold">Bangladesh Railway Helpline </h1>
@@ -262,7 +269,8 @@
                             Travel</p>
                     </div>
                     <div class="flex justify-between items-center gap-5 mt-[24px]">
-                        <button class="text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
+                        <button
+                            class="copy-btn text-[16px] w-[200px] p-2 text-gray-500 shadow-lg rounded-lg cursor-pointer"><i
                                 class="fa-regular fa-copy text-[16px]"></i>Copy</button>
                         <button
                             class="btn-call bg-[#00A63E] text-[15px] w-[200px] p-2 text-white shadow-lg rounded-lg cursor-pointer"><i
@@ -272,9 +280,11 @@
             </div>
             <aside class="col-span-3 p-6 bg-white shadow-2xl rounded-lg mt-6">
                 <div class="flex justify-between">
-                    <h1 class="font-semibold"><i class="fa-regular fa-clock text-gray-500 text-[20dlpx] "></i><span class="ml-2 text-[20px]">Call
+                    <h1 class="font-semibold"><i class="fa-regular fa-clock text-gray-500 text-[20dlpx] "></i><span
+                            class="ml-2 text-[20px]">Call
                             History</span></h1>
-                    <button id="btn-clear" class="w-[100px] bg-green-600 p-2 rounded-3xl text-white cursor-pointer">Clear</button>
+                    <button id="btn-clear"
+                        class="w-[100px] bg-green-600 p-2 rounded-3xl text-white cursor-pointer">Clear</button>
                 </div>
                 <div class="space-y-3 mt-3" id="service-container">
                 </div>

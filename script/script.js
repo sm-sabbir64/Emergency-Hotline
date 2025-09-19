@@ -4,11 +4,11 @@ function getElementById(id) {
   const element = document.getElementById(id);
   return element;
 }
-//event add korar system
 
-//যেখানে ক্লিক হবে সেটাকে ধরে নিয়ে আসতে হবে।
-//ইভেন্ট অ্যাড করতে হবে।
-//ফাংশন লেখতে হবে।
+function getElementsByClassName(className) {
+  const element = document.getElementsByClassName(className);
+  return element;
+}
 
 //Event delegation
 getElementById("service-box").addEventListener("click", function (e) {
@@ -22,8 +22,22 @@ getElementById("service-box").addEventListener("click", function (e) {
       serviceButton.parentNode.parentNode.children[2].children[0].innerText;
     const time = {
       date: new Date().toLocaleTimeString(),
+      // console.log(time);
     };
-    // console.log(time);
+
+    //Coin Count
+    let coinCount = getElementById("coin-count");
+    let coinCountNum = coinCount.innerText;
+
+    let newCoinCountNum = coinCountNum - 20;
+
+    if (newCoinCountNum < 0) {
+      alert("you don't have enough coin to make call ,you need 20 coin");
+      return;
+    } else {
+      alert("Calling" + " " + serviceTitle + " " + serviceCall + "....");
+    }
+    coinCount.innerText = newCoinCountNum;
 
     const newHistoryContainer = getElementById("service-container");
     const newHistory = document.createElement("div");
@@ -46,4 +60,32 @@ getElementById("service-box").addEventListener("click", function (e) {
 document.getElementById("btn-clear").addEventListener("click", function () {
   const cardContainer = getElementById("service-container");
   cardContainer.innerHTML = "";
+
+  //heart & copy count
+  // getElementById('heart-count').innerText = 0;
+  // getElementById('copyCount').innerText = 0;
 });
+
+//heart count
+let hearts = getElementsByClassName("heartClass");
+
+for (let heart of hearts) {
+  heart.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    let heartCount = Number(getElementById("heart-count").innerText);
+    getElementById("heart-count").innerText = heartCount + 1;
+  });
+}
+
+//Copy count
+let copyCount = getElementsByClassName("copy-btn");
+
+for (let copy of copyCount) {
+  copy.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    let copyCountNum = parseInt(getElementById("copyCount").innerText);
+    getElementById("copyCount").innerText = copyCountNum + 1 + " " + "Copy";
+  });
+}
